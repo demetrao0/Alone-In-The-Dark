@@ -2,28 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Movimiento : MonoBehaviour
-
-    public float velocidad;
-    public float velocidadmax;
-
-    private RigidBody2D rPlayer;
-    private float a;
-
 {
-    void Start()
-    {
-        rPlayer = GetComponent<RigidBody2D>();
-    }
+    public float velocidad;
+    public float fuerzaSalto;
+    public bool colPies = false;
 
+    private Rigidbody2D rigidBody;
+   // private bool Derecha = true;
+    
+    private void Start()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+    }
+    
+    // Update is called once per frame
     void Update()
     {
-       
+        procesarMovimiento();
+        ProcesarSalto();
+        
+
+    }
+  
+    void ProcesarSalto()
+    {
+        //colPies = CheckGround.colPies;
+
+        if (Input.GetButtonDown("Jump") && colPies)
+        {
+            rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        }
+
+    }
+ 
+
+    void procesarMovimiento()
+    {
+
+        float inputMovimiento = Input.GetAxis("Horizontal");
+        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody.velocity = new Vector2(inputMovimiento * velocidad, rigidbody.velocity.y);
+       // GestionarOrientacion(inputMovimiento);
     }
 
-    public void FixedUpdate();
+   /* void GestionarOrientacion(float inputMovimiento)
     {
-        a = Imput.GetAxisRaw("Horizontal");
-        rPlayer.AddForce(Vector2.right * velocidad * a);
+        if ((Derecha = true && inputMovimiento < 1)|| (Derecha == false && inputMovimiento > -1))
+        {
+            Derecha = !Derecha;
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }*/
     }
-}
+
+
+
+
