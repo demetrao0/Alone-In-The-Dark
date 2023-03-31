@@ -8,7 +8,7 @@ public class Movimiento : MonoBehaviour
 {
     public float velocidad;
     public float fuerzaSalto;
-    public bool colPies = false;
+    //public bool colPies = false;
 
     private Rigidbody2D rigidBody;
    // private bool Derecha = true;
@@ -31,7 +31,7 @@ public class Movimiento : MonoBehaviour
     {
         //colPies = CheckGround.colPies;
 
-        if (Input.GetButtonDown("Jump") && colPies)
+        if (Input.GetButtonDown("Jump") /*&& colPies*/)
         {
             rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
         }

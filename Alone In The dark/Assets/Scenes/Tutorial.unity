@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 60399017}
   - component: {fileID: 60399019}
-  - component: {fileID: 60399018}
   m_Layer: 0
   m_Name: Pies
   m_TagString: Untagged
@@ -156,18 +155,6 @@ Transform:
   m_Father: {fileID: 213213799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &60399018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60399016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385abe9b0e1ea564ba7c3993023c9647, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &60399019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228,7 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 1
   fuerzaSalto: 10
-  colPies: 1
 --- !u!61 &213213796
 BoxCollider2D:
   m_ObjectHideFlags: 0
