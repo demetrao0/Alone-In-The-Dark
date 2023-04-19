@@ -8,25 +8,32 @@ public class Movimiento : MonoBehaviour
 {
     public float velocidad;
     public float fuerzaSalto;
-    //public bool colPies = false;
+    public bool colPies = false;
 
     private Rigidbody2D rigidBody;
-   // private bool Derecha = true;
-    
+     private bool Derecha = true;
+
+    public float dashcooldown;
+
+    public float dashForce;
+
+    public GameObject dashParticles;
+
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+
     }
-    
+
     // Update is called once per frame
     void Update()
     {
         procesarMovimiento();
         ProcesarSalto();
-        
+
 
     }
-  
+
     void ProcesarSalto()
     {
         //colPies = CheckGround.colPies;
@@ -37,7 +44,7 @@ public class Movimiento : MonoBehaviour
         }
 
     }
- 
+
 
     void procesarMovimiento()
     {
@@ -45,16 +52,18 @@ public class Movimiento : MonoBehaviour
         float inputMovimiento = Input.GetAxis("Horizontal");
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.velocity = new Vector2(inputMovimiento * velocidad, rigidbody.velocity.y);
-       // GestionarOrientacion(inputMovimiento);
+        GestionarOrientacion(inputMovimiento);
+
     }
 
-   /* void GestionarOrientacion(float inputMovimiento)
-    {
-        if ((Derecha = true && inputMovimiento < 1)|| (Derecha == false && inputMovimiento > -1))
-        {
-            Derecha = !Derecha;
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-        }*/
+     void GestionarOrientacion(float inputMovimiento)
+     {
+         if ((Derecha = true && inputMovimiento < 1)  ||  (Derecha == false && inputMovimiento > -1))
+         {
+             Derecha = !Derecha;
+             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+         }
+}
     }
 
 
