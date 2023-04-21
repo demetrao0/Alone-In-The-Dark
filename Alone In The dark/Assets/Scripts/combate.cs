@@ -5,7 +5,7 @@ using UnityEngine;
 public class combate : MonoBehaviour
 {
 
-    public Transform controladorGolpe;
+    public Transform posicion;
     public float radioGolpe;
     public float dañoGolpe;
 
@@ -22,7 +22,7 @@ public class combate : MonoBehaviour
     }
     private void Golpe()
     {
-        Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position, dañoGolpe);
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(posicion.position, Mathf.Abs(dañoGolpe));
 
         foreach (Collider2D colisionador in objetos)
         {
@@ -36,7 +36,7 @@ public class combate : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(controladorGolpe.position, radioGolpe);
+        Gizmos.DrawWireSphere(posicion.position, radioGolpe);
     }
 
 
