@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
         //Jugador viendo en direccion de movimiento
         giraPlayer(h);
         aPlayer.SetFloat("VelocidadX", Mathf.Abs(rPlayer.velocity.x));
+        aPlayer.SetFloat("VelocidadY", rPlayer.velocity.y);
+        aPlayer.SetBool("TocarSuelo", colPies);
 
         //Salto
         colPies = CheckGround.colPies;
