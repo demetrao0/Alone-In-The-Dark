@@ -14,7 +14,7 @@ public class EnemigoM : MonoBehaviour
 
     public void TomarDaño(float daño)
     {
-        Vida -= daño;
+        Vida -= daño/2;
         if (Vida<=1)
         {
             Muerte();
