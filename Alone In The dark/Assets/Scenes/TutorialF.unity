@@ -137,9 +137,11 @@ GameObject:
   - component: {fileID: 89698566}
   - component: {fileID: 89698565}
   - component: {fileID: 89698570}
+  - component: {fileID: 89698571}
+  - component: {fileID: 89698572}
   m_Layer: 0
   m_Name: Enemigo
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,9 +194,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.21833014, y: 0}
   serializedVersion: 2
-  m_Radius: 5.05
+  m_Radius: 1.678015
 --- !u!212 &89698568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -288,6 +290,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1457272, y: 1.2355659}
   m_EdgeRadius: 0
+--- !u!114 &89698571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89698564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69a2d78fffd57640ab79312ccc496b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vida: 100
+--- !u!95 &89698572
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89698564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e17d836d370e0b442b9726bde9895653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &249817533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1736,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &684797111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684797112}
+  m_Layer: 0
+  m_Name: Golpe
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684797112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684797111}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03999996, y: -0.38999987, z: 0.0065499544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1845938051}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856263016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,6 +2385,7 @@ Transform:
   m_Children:
   - {fileID: 907180202}
   - {fileID: 856263017}
+  - {fileID: 684797112}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2419,6 +2486,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1845938049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d53dcb7a8418204198a4d5c0e6b95fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 3234e31f67888b540a0e64ca3d167ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posicion: {fileID: 684797112}
+  radioGolpe: 0.05
+  "da\xF1oGolpe": 20
