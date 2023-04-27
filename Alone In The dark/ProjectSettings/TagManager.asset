@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Terreno
   - Enemigo
+  - MuerteVacio
+  - CabezaEnemigo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Suelo
   - Water
   - UI
   - 
